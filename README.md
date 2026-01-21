@@ -10,7 +10,7 @@ artificial intelligence, co-founder and vice president of the Academic League of
     
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-101720?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/p%C3%A9ricles-leite-ab2766268)
 &nbsp;&nbsp;&nbsp;
-[![Gmail](https://img.shields.io/badge/Gmail-0057FF?style=for-the-badge&logo=gmail&logoColor=white)](https://is.gd/xTuOgg)
+[![Gmail](https://img.shields.io/badge/Gmail-0057FF?style=for-the-badge&logo=gmail&logoColor=white)](mailto:periclesleite2504@gmail.com)
     
 </div>
 
