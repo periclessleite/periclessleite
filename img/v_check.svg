@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <!-- Fundo com borda -->
+  <rect x="0.75" y="0.75" width="26.5" height="26.5" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.5"></rect>
+
+  <!-- V minimal -->
+  <path d="M8 11 L14 19 L20 11" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+</svg>
