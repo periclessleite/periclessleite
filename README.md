@@ -13,7 +13,7 @@ Currently pursuing a degree in Computer Science at the Federal University of Ser
 
 
 
-<img align="right" height="340em"
+<img align="right" height="300em"
 src="https://lh3.googleusercontent.com/d/1vRgvM1rUQJ1cjr1UsCgJzTAUaRJyqTYX">
 
 ><h4 align="left"><i>Data Science</i> &#9662;</h4> 
