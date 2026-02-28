@@ -8,12 +8,9 @@ Currently pursuing a degree in Computer Science at the Federal University of Ser
 
 <img src="https://github.com/user-attachments/assets/2771e981-8cb8-49ef-af10-d15bfefaa462">
 
-
 <img src="https://raw.githubusercontent.com/periclessleite/periclessleite/main/img/v_check.svg" width="13" height="13"/> Programming Languages And Technologies
 
-
-
-<img align="right" height="410em"
+<img align="right" height="420em"
 src="https://lh3.googleusercontent.com/d/1XPYbWaK83a5NoBgweYJpiGndxy9VigCW">
 
 ><h4 align="left"><i>Data Science</i> &#9662;</h4> 
@@ -24,7 +21,8 @@ src="https://lh3.googleusercontent.com/d/1XPYbWaK83a5NoBgweYJpiGndxy9VigCW">
 <img src="https://skillicons.dev/icons?i=sklearn,pytorch,tensorflow,docker,anaconda" height="48"/>
 
 ><h4 align="left"><i>Web Systems Development</i> &#9662;</h4>
-<img src="https://skillicons.dev/icons?i=java,spring,js,html,css,nodejs,react,tailwind" height="48"/>
+<img src="https://skillicons.dev/icons?i=java,spring,js,html,css" height="48"/>
+<img src="https://skillicons.dev/icons?i=nodejs,react,tailwind" height="48"/>
 
 <img src="https://raw.githubusercontent.com/periclessleite/periclessleite/main/img/v_check.svg" width="13" height="13"/> Statistics
 
