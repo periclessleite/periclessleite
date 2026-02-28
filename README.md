@@ -13,8 +13,8 @@ Currently pursuing a degree in Computer Science at the Federal University of Ser
 
 
 
-<img align="right" height="300em"
-src="https://lh3.googleusercontent.com/d/1vRgvM1rUQJ1cjr1UsCgJzTAUaRJyqTYX">
+<img align="right" height="480em"
+src="https://lh3.googleusercontent.com/d/1XPYbWaK83a5NoBgweYJpiGndxy9VigCW">
 
 ><h4 align="left"><i>Data Science</i> &#9662;</h4> 
 <img src="https://skillicons.dev/icons?i=python,r,mysql,postgres,mongodb" height="48"/>
