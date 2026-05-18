@@ -24,18 +24,5 @@ src="https://lh3.googleusercontent.com/d/1XPYbWaK83a5NoBgweYJpiGndxy9VigCW">
 <img src="https://skillicons.dev/icons?i=java,spring,js,html,css" height="48"/>
 <img src="https://skillicons.dev/icons?i=nodejs,react,tailwind" height="48"/>
 
-<img src="https://raw.githubusercontent.com/periclessleite/periclessleite/main/img/v_check.svg" width="13" height="13"/> Statistics
-
-<div style="display: flex; justify-content: center;">
-
-<img src="https://github-readme-stats-eight-livid-79.vercel.app/api?username=periclessleite&show_icons=true&theme=radical&rank_icon=github&hide_border=true&hide=issues,prs"/><br>
-<img src="https://github-readme-stats-eight-livid-79.vercel.app/api/top-langs/?username=periclessleite&layout=compact&theme=radical&hide_border=true&langs_count=6" />
-
-
+In evolution..
 <img src="https://github.com/user-attachments/assets/2771e981-8cb8-49ef-af10-d15bfefaa462">
-
-<!-- dark mode -->
-<img src="https://raw.githubusercontent.com/periclessleite/periclessleite/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only" />
-<!-- light mode -->
-<img src="https://raw.githubusercontent.com/periclessleite/periclessleite/output/github-contribution-grid-snake.svg#gh-light-mode-only" />
-</div>
