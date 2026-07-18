@@ -1,14 +1,14 @@
-<h1 align="left">Péricles Leite ⚛️</h1>
+<h1 align="left">Péricles Leite</h1>
    
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-101720?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/p%C3%A9ricles-leite-ab2766268)
 &nbsp;
 [![Gmail](https://img.shields.io/badge/Gmail-0057FF?style=for-the-badge&logo=gmail&logoColor=white)](mailto:periclesleite2504@gmail.com)
 
-Currently pursuing a degree in Computer Science at the Federal University of Sergipe (UFS), I focus my studies on Data Analysis, Artificial Intelligence, and Java Development. My academic journey is marked by a strong commitment to leadership and community building as the Co-founder and Vice President of the Academic League of Artificial Intelligence (LaIA), where I work to bridge the gap between theoretical research and practical applications in the field.
+Currently pursuing a degree in Computer Science at the Federal University of Sergipe (UFS), I focus my studies on Data Analysis, Artificial Intelligence, and Java Development. My academic journey is marked by a strong commitment to leadership and community building as the Co-founder and President of the Academic League of Artificial Intelligence (LaIA-UFS), where I work to bridge the gap between theoretical research and practical applications in the field.
 
 <img src="https://github.com/user-attachments/assets/2771e981-8cb8-49ef-af10-d15bfefaa462">
 
-<img src="https://raw.githubusercontent.com/periclessleite/periclessleite/main/img/v_check.svg" width="13" height="13"/> Programming Languages And Technologies
+Programming Languages And Technologies
 
 <img align="right" height="420em"
 src="https://lh3.googleusercontent.com/d/1XPYbWaK83a5NoBgweYJpiGndxy9VigCW">
@@ -25,4 +25,3 @@ src="https://lh3.googleusercontent.com/d/1XPYbWaK83a5NoBgweYJpiGndxy9VigCW">
 <img src="https://skillicons.dev/icons?i=nodejs,react,tailwind" height="48"/>
 
 In evolution..
-<img src="https://github.com/user-attachments/assets/2771e981-8cb8-49ef-af10-d15bfefaa462">
