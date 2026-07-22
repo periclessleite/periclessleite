@@ -26,8 +26,8 @@ src="https://lh3.googleusercontent.com/d/1XPYbWaK83a5NoBgweYJpiGndxy9VigCW">
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/night.svg" />
-    <img alt="github profile contributions chart" src="./profile-3d-contrib/night.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="./git-stats/night-stats.svg" />
+    <img alt="github profile contributions chart" src="./git-stats/night-stats.svg" />
   </picture>
 </p>
 
