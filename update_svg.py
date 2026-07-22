@@ -18,7 +18,12 @@ if os.path.exists(source_svg_path):
 
     # 3. Remove completamente a barra central isométrica (o bloco de blocos coloridos de contribuição diária)
     # Procuramos e removemos a grande faixa de tags <g transform="translate(...)"> que desenham os cubos
-    svg_content = re.sub(r'<g>\s*<g transform="translate\(140 154\.18\)".*?</svg>', '</svg>', svg_content, flags=re.DOTALL)
+    svg_content = re.sub(
+        r'(<rect x="0" y="0" width="1280" height="500" fill="#00000f"></rect>).*?(<g transform="translate\(980,\s*284\.5\)">)',
+        r'\1\2',
+        svg_content,
+        flags=re.DOTALL
+    )
 
     # 4. Centraliza o Gráfico de Radar na vertical (movendo de Y=284.5 para Y=250)
     svg_content = svg_content.replace('transform="translate(980, 284.5)"', 'transform="translate(980, 250)"')
