@@ -24,4 +24,12 @@ src="https://lh3.googleusercontent.com/d/1XPYbWaK83a5NoBgweYJpiGndxy9VigCW">
 <img src="https://skillicons.dev/icons?i=java,spring,js,html,css" height="48"/>
 <img src="https://skillicons.dev/icons?i=nodejs,react,tailwind" height="48"/>
 
+<p align="center" >
+	<picture>
+	  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/periclessleite/periclessleite/output-3d-contrib/night.svg" />
+	  <img alt="github profile contributions chart"    src="https://raw.githubusercontent.com/periclessleite/periclessleite/output-3d-contrib/night.svg" />
+	</picture>
+</p>
+
+
 In evolution..
