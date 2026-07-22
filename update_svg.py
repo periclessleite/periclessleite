@@ -2,88 +2,89 @@ import os
 import re
 
 source_svg_path = "profile-3d-contrib/night.svg"
-output_path = "git-stats/night-stats.svg" 
+output_path = "git-stats/night-stats.svg"
 
 if os.path.exists(source_svg_path):
     with open(source_svg_path, "r", encoding="utf-8") as f:
         src_content = f.read()
 
-    def extract_value(pattern, default):
-        match = re.search(pattern, src_content)
-        return match.group(1) if match else default
+    commit_match = re.search(r'<text[^>]*>Commit</text>\s*<title>(\d+)</title>', src_content)
+    commits = commit_match.group(1) if commit_match else "0"
 
-    commits = extract_value(r'id="commit"[^>]*>(\d+)</text>', "154")
-    total_contribs = extract_value(r'(\d+)\s+contributions', "298")
-    
+    contrib_match = re.search(r'>(\d+)\s+contributions<', src_content)
+    total_contribs = contrib_match.group(1) if contrib_match else "0"
 
     custom_svg_template = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="500" viewBox="0 0 1280 500">
-        <style>* {{ font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }}</style>
-        <rect x="0" y="0" width="1280" height="500" fill="#00000f"></rect>
-        
-        <!-- Gráfico de Radar (Estatísticas) -->
-        <g transform="translate(980, 250)">
-            <line x1="0" y1="-31.2" x2="29.67" y2="-9.64" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="29.67" y1="-9.64" x2="18.34" y2="25.24" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="18.34" y1="25.24" x2="-18.34" y2="25.24" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-18.34" y1="25.24" x2="-29.67" y2="-9.64" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-29.67" y1="-9.64" x2="0" y2="-31.2" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="0" y1="-62.4" x2="59.35" y2="-19.28" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="59.35" y1="-19.28" x2="36.68" y2="50.48" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="36.68" y1="50.48" x2="-36.68" y2="50.48" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-36.68" y1="50.48" x2="-59.35" y2="-19.28" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-59.35" y1="-19.28" x2="0" y2="-62.4" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="0" y1="-93.6" x2="89.02" y2="-28.92" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="89.02" y1="-28.92" x2="55.02" y2="75.72" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="55.02" y1="75.72" x2="-55.02" y2="75.72" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-55.02" y1="75.72" x2="-89.02" y2="-28.92" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-89.02" y1="-28.92" x2="0" y2="-93.6" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="0" y1="-124.8" x2="118.69" y2="-38.57" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="118.69" y1="-38.57" x2="73.36" y2="100.97" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="73.36" y1="100.97" x2="-73.36" y2="100.97" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-73.36" y1="100.97" x2="-118.69" y2="-38.57" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-118.69" y1="-38.57" x2="0" y2="-124.8" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="0" y1="-156" x2="148.36" y2="-48.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="148.36" y1="-48.21" x2="91.69" y2="126.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="91.69" y1="126.21" x2="-91.69" y2="126.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-91.69" y1="126.21" x2="-148.36" y2="-48.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <line x1="-148.36" y1="-48.21" x2="0" y2="-156" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-31.2" fill="#aaaaaa">1</text>
-            <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-62.4" fill="#aaaaaa">10</text>
-            <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-93.6" fill="#aaaaaa">100</text>
-            <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-124.8" fill="#aaaaaa">1K</text>
-            <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-156" fill="#aaaaaa">10K</text>
-            <g class="axis">
-            <line x1="0" y1="-31.2" x2="0" y2="-156" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="0" y="-182.52" fill="#eeeeff">Commit<title>{commits}</title></text>
-            </g>
-            <g class="axis">
-            <line x1="29.67" y1="-9.64" x2="148.36" y2="-48.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="185.46" y="-56.4" fill="#eeeeff">Issue</text>
-            </g>
-            <g class="axis">
-            <line x1="18.34" y1="25.24" x2="91.69" y2="126.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="114.62" y="147.66" fill="#eeeeff">PullReq</text>
-            </g>
-            <g class="axis">
-            <line x1="-18.34" y1="25.24" x2="-91.69" y2="126.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="-114.62" y="147.66" fill="#eeeeff">Review</text>
-            </g>
-            <g class="axis">
-            <line x1="-29.67" y1="-9.64" x2="-148.36" y2="-48.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
-            <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="-185.46" y="-56.4" fill="#eeeeff">Repo</text>
-            </g>
-            <polygon style="stroke-width: 4px; stroke: rgb(255,200,55); fill: rgb(255,200,55); fill-opacity: 0.5;" points="0,-99.45 23.74,-7.71 23.86,32.84 -18.34,25.24 -64.57,-20.98">
-            <animate attributeName="points" values="0,-24.96 23.74,-7.71 14.67,20.19 -14.67,20.19 -23.74,-7.71;0,-99.45 23.74,-7.71 23.86,32.84 -18.34,25.24 -64.57,-20.98" dur="3s" repeatCount="1"></animate>
-            </polygon>
-        </g>
-        
-        <!-- Rodapé com o total de contribuições atualizado -->
-        <g>
-            <text style="font-size: 32px; font-weight: bold;" x="464" y="468" text-anchor="end" fill="rgb(255,200,55)">{total_contribs}</text>
-            <text style="font-size: 24px;" x="474" y="468" text-anchor="start" fill="#eeeeff">contributions</text>
-        </g>
-        </svg>'''
+  <style>* {{ font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }}</style>
+  <rect x="0" y="0" width="1280" height="500" fill="#00000f"></rect>
+  
+  <!-- Gráfico de Radar (Estatísticas) -->
+  <g transform="translate(980, 250)">
+    <line x1="0" y1="-31.2" x2="29.67" y2="-9.64" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="29.67" y1="-9.64" x2="18.34" y2="25.24" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="18.34" y1="25.24" x2="-18.34" y2="25.24" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-18.34" y1="25.24" x2="-29.67" y2="-9.64" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-29.67" y1="-9.64" x2="0" y2="-31.2" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="0" y1="-62.4" x2="59.35" y2="-19.28" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="59.35" y1="-19.28" x2="36.68" y2="50.48" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="36.68" y1="50.48" x2="-36.68" y2="50.48" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-36.68" y1="50.48" x2="-59.35" y2="-19.28" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-59.35" y1="-19.28" x2="0" y2="-62.4" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="0" y1="-93.6" x2="89.02" y2="-28.92" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="89.02" y1="-28.92" x2="55.02" y2="75.72" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="55.02" y1="75.72" x2="-55.02" y2="75.72" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-55.02" y1="75.72" x2="-89.02" y2="-28.92" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-89.02" y1="-28.92" x2="0" y2="-93.6" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="0" y1="-124.8" x2="118.69" y2="-38.57" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="118.69" y1="-38.57" x2="73.36" y2="100.97" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="73.36" y1="100.97" x2="-73.36" y2="100.97" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-73.36" y1="100.97" x2="-118.69" y2="-38.57" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-118.69" y1="-38.57" x2="0" y2="-124.8" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="0" y1="-156" x2="148.36" y2="-48.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="148.36" y1="-48.21" x2="91.69" y2="126.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="91.69" y1="126.21" x2="-91.69" y2="126.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-91.69" y1="126.21" x2="-148.36" y2="-48.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <line x1="-148.36" y1="-48.21" x2="0" y2="-156" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+    <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-31.2" fill="#aaaaaa">1</text>
+    <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-62.4" fill="#aaaaaa">10</text>
+    <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-93.6" fill="#aaaaaa">100</text>
+    <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-124.8" fill="#aaaaaa">1K</text>
+    <text style="font-size: 13px;" text-anchor="start" dominant-baseline="auto" x="3.12" y="-156" fill="#aaaaaa">10K</text>
+    <g class="axis">
+      <line x1="0" y1="-31.2" x2="0" y2="-156" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+      <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="0" y="-182.52" fill="#eeeeff">Commit<title>{commits}</title></text>
+    </g>
+    <g class="axis">
+      <line x1="29.67" y1="-9.64" x2="148.36" y2="-48.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+      <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="185.46" y="-56.4" fill="#eeeeff">Issue</text>
+    </g>
+    <g class="axis">
+      <line x1="18.34" y1="25.24" x2="91.69" y2="126.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+      <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="114.62" y="147.66" fill="#eeeeff">PullReq</text>
+    </g>
+    <g class="axis">
+      <line x1="-18.34" y1="25.24" x2="-91.69" y2="126.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+      <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="-114.62" y="147.66" fill="#eeeeff">Review</text>
+    </g>
+    <g class="axis">
+      <line x1="-29.67" y1="-9.64" x2="-148.36" y2="-48.21" style="stroke: #aaaaaa; stroke-dasharray: 4 4; stroke-width: 1px;"></line>
+      <text style="font-size: 20.8px;" text-anchor="middle" dominant-baseline="middle" x="-185.46" y="-56.4" fill="#eeeeff">Repo</text>
+    </g>
+    <polygon style="stroke-width: 4px; stroke: rgb(255,200,55); fill: rgb(255,200,55); fill-opacity: 0.5;" points="0,-99.45 23.74,-7.71 23.86,32.84 -18.34,25.24 -64.57,-20.98">
+      <animate attributeName="points" values="0,-24.96 23.74,-7.71 14.67,20.19 -14.67,20.19 -23.74,-7.71;0,-99.45 23.74,-7.71 23.86,32.84 -18.34,25.24 -64.57,-20.98" dur="3s" repeatCount="1"></animate>
+    </polygon>
+  </g>
+  
+  <!-- Rodapé com o total de contribuições atualizado -->
+  <g>
+    <text style="font-size: 32px; font-weight: bold;" x="464" y="468" text-anchor="end" fill="rgb(255,200,55)">{total_contribs}</text>
+    <text style="font-size: 24px;" x="474" y="468" text-anchor="start" fill="#eeeeff">contributions</text>
+  </g>
+</svg>'''
 
     os.makedirs("git-stats", exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(custom_svg_template)
+    print(f"Sucesso! Atualizado com Commits: {commits} e Contribuições: {total_contribs}")
+else:
+    print("Erro: O arquivo profile-3d-contrib/night.svg não foi encontrado.")
